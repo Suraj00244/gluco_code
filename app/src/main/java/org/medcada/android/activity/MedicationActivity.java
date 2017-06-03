@@ -1,26 +1,38 @@
 package org.medcada.android.activity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+
 import org.medcada.android.R;
-import org.medcada.android.presenter.RemindersPresenter;
+import org.medcada.android.adapter.MedicationAdapter;
+import org.medcada.android.db.DatabaseHandler;
+import org.medcada.android.db.MedicationBean;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MedicationActivity extends AppCompatActivity {
+    @BindView(R.id.activity_medication_listview)
+    ListView lv_medicationdata;
     private FloatingActionButton addFab;
-    private ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medication);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.activity_main_toolbar);
 
         if (toolbar != null) {
@@ -39,10 +51,12 @@ public class MedicationActivity extends AppCompatActivity {
         }
 
     }
+
     private void startAddMedicationActivity() {
         Intent intent = new Intent(this, AddMedicationActivity.class);
         startActivity(intent);
     }
+
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case android.R.id.home:
@@ -52,5 +66,19 @@ public class MedicationActivity extends AppCompatActivity {
 //                startActivity(homeIntent);
         }
         return (super.onOptionsItemSelected(menuItem));
+    }
+
+    ArrayList<MedicationBean> list;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        list = new DatabaseHandler(this).getMedicationData();
+        MedicationAdapter adapter = new MedicationAdapter(this, list);
+        lv_medicationdata.setAdapter(adapter);
+        for (MedicationBean bean : list) {
+            Log.i("======", "onResume: " + bean.toString());
+        }
+
     }
 }

@@ -261,7 +261,8 @@
         <activity android:name=".activity.RemindersActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.MedicationActivity" />
-        <activity android:name=".activity.AddMedicationActivity"></activity>
+        <activity android:name=".activity.AddMedicationActivity" />
+        <activity android:name=".activity.PinCodeActivity"></activity>
     </application>
 
 </manifest>

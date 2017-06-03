@@ -38,6 +38,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v4.BuildConfig;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -71,8 +72,10 @@ import org.medcada.android.db.DatabaseHandler;
 import org.medcada.android.presenter.ExportPresenter;
 import org.medcada.android.presenter.MainPresenter;
 import org.medcada.android.tools.LocaleHelper;
+import org.medcada.android.tools.Preferences;
 import org.medcada.android.view.ExportView;
 
+import java.lang.reflect.Method;
 import java.util.Calendar;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -102,10 +105,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         super.onCreate(savedInstanceState);
 
         GlucosioApplication application = (GlucosioApplication) getApplication();
-
+//startActivity(new Intent(this,PinCodeActivity.class));
         initPresenters(application);
         setContentView(R.layout.activity_main);
-
+        showDebugDBAddressLogToast();
         Toolbar toolbar = (Toolbar) findViewById(R.id.activity_main_toolbar);
         tabLayout = (TabLayout) findViewById(R.id.activity_main_tab_layout);
         viewPager = (ViewPager) findViewById(R.id.activity_main_pager);
@@ -340,7 +343,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         startActivity(intent);
     }
     private void startProfileActivity() {
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent;
+        if (new Preferences(this).getProfiledata()!=null) {
+            if (new Preferences(this).getProfiledata().isPinEnabled()) {
+                intent = new Intent(this, PinCodeActivity.class);
+            } else {
+                intent = new Intent(this, ProfileActivity.class);
+            }
+        }else {
+            intent = new Intent(this, ProfileActivity.class);
+        }
         startActivity(intent);
     }
     public void startHelloActivity() {
@@ -775,5 +787,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     private void showErrorDialogPlayServices() {
         Toast.makeText(getApplicationContext(), R.string.activity_main_error_play_services, Toast.LENGTH_SHORT).show();
+    }
+    public  void showDebugDBAddressLogToast() {
+        if (BuildConfig.DEBUG) {
+            try {
+                Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
+                Method getAddressLog = debugDB.getMethod("getAddressLog");
+                Object value = getAddressLog.invoke(null);
+                Log.i("==========", "showDebugDBAddressLogToast: "+(String) value);
+                Toast.makeText(this, (String) value, Toast.LENGTH_LONG).show();
+            } catch (Exception ignore) {
+
+            }
+        }
     }
 }

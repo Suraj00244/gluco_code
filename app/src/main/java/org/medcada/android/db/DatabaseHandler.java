@@ -55,8 +55,9 @@ public class DatabaseHandler {
     public Realm getNewRealmInstance() {
         if (mRealmConfig == null) {
             mRealmConfig = new RealmConfiguration.Builder(mContext)
-                    .schemaVersion(4)
-                    .migration(new Migration())
+                    .schemaVersion(5)
+//                    .migration(new Migration())
+                    .deleteRealmIfMigrationNeeded()
                     .build();
         }
         return Realm.getInstance(mRealmConfig); // Automatically run migration if needed
@@ -885,6 +886,32 @@ public class DatabaseHandler {
         realm.copyToRealm(reading);
         realm.commitTransaction();
     }
+    public void addMedicationData(MedicationBean medicationBean) {
+        realm.beginTransaction();
+        medicationBean.setId(getNextKey("medication"));
+        realm.copyToRealm(medicationBean);
+        realm.commitTransaction();
+    }
+    public void updateMedicationData(MedicationBean medicationBean) {
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(medicationBean);
+        realm.commitTransaction();
+    }
+    public MedicationBean getMedicationBean(long id) {
+        return realm.where(MedicationBean.class)
+                .equalTo("id", id)
+                .findFirst();
+    }
+    public ArrayList<MedicationBean> getMedicationData() {
+        RealmResults<MedicationBean> results =
+                realm.where(MedicationBean.class).findAll();
+        ArrayList<MedicationBean> readingList = new ArrayList<>();
+        for (int i = 0; i < results.size(); i++) {
+            readingList.add(results.get(i));
+        }
+        return readingList;
+    }
+
 
     public void editCholesterolReading(long oldId, CholesterolReading reading) {
         // First delete the old reading
@@ -1017,6 +1044,10 @@ public class DatabaseHandler {
                 break;
             case "cholesterol":
                 maxId = realm.where(CholesterolReading.class)
+                        .max("id");
+                break;
+            case "medication":
+                maxId = realm.where(MedicationBean.class)
                         .max("id");
                 break;
         }
