@@ -200,15 +200,15 @@
   <!-- About Glucosio Strings -->
   <string name="activity_export_date_from">From:</string>
   <string name="dialog_add_weight">Weight</string>
-  <string name="dialog_add_ketones">Ketones</string>
+  <string name="dialog_add_ketones">Temperature</string>
   <string name="dialog_add_hb1ac">HbA1c</string>
   <string name="title_activity_add_glucose">Add Glucose reading</string>
   <string name="title_activity_add_hb1ac_edit">Edit HbA1c</string>
-  <string name="title_activity_add_ketone_edit">Edit Ketones</string>
+  <string name="title_activity_add_ketone_edit">Edit Temperature</string>
   <string name="title_activity_add_pressure">Add Blood Pressure</string>
   <string name="title_activity_add_pressure_edit">Edit Blood Pressure</string>
   <string name="fab_weight">Body Weight</string>
-  <string name="fab_ketones">Ketones</string>
+  <string name="fab_ketones">Temperature</string>
   <string name="fab_pressure">Blood Pressure</string>
   <string name="fab_cholesterol">Cholesterol Level</string>
   <string name="fab_HB1AC">HbA1c Reading</string>

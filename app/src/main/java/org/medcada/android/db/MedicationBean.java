@@ -22,7 +22,7 @@ public class MedicationBean extends RealmObject {
     int qty,dose, interval;
     boolean asNeeded;
     public MedicationBean(){}
-    public MedicationBean(String medicationName, String form, String shape, String reminderTime, String repeat, int qty, int dose, int interval, boolean asNeeded) {
+    public MedicationBean(String medicationName, String form, String shape, String reminderTime, String repeat, int qty, int dose, int interval, boolean asNeeded,int color) {
         this.medicationName = medicationName;
         this.form = form;
         this.shape = shape;
@@ -32,8 +32,18 @@ public class MedicationBean extends RealmObject {
         this.dose = dose;
         this.interval = interval;
         this.asNeeded = asNeeded;
+        this.color = color;
     }
 
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    private int color;
     public String getMedicationName() {
         return medicationName;
     }

@@ -28,7 +28,8 @@
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="false" />
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <!-- Required to export and save CSV or graph -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -262,7 +263,18 @@
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.MedicationActivity" />
         <activity android:name=".activity.AddMedicationActivity" />
-        <activity android:name=".activity.PinCodeActivity"></activity>
+        <activity android:name=".activity.PinCodeActivity" />
+        <activity android:name=".activity.AddReminderDetailsActivity" />
+        <activity
+            android:name="com.onegravity.contactpicker.core.ContactPickerActivity"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SelectContactActivity"></activity>
     </application>
 
 </manifest>

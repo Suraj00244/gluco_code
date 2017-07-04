@@ -6,13 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.gson.Gson;
 
 import org.medcada.android.R;
 import org.medcada.android.activity.AddMedicationActivity;
-import org.medcada.android.activity.MedicationActivity;
 import org.medcada.android.db.MedicationBean;
 
 import java.util.ArrayList;
@@ -55,7 +53,8 @@ public class MedicationAdapter extends BaseAdapter {
         ViewHolder holder = new ViewHolder(convertView);
         MedicationBean bean = list.get(position);
         holder.tvMedicName.setText(bean.getMedicationName());
-        holder.tvMedicTime.setText(bean.getReminderTime());
+        holder.tvMedicTime.setText(bean.getInterval() + " times " + bean.getRepeat());
+        holder.ivColor.setColorFilter(bean.getColor());
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +67,10 @@ public class MedicationAdapter extends BaseAdapter {
         return convertView;
     }
 
+
     static class ViewHolder {
+        @BindView(R.id.iv_color)
+        ImageView ivColor;
         @BindView(R.id.tv_medicName)
         TextView tvMedicName;
         @BindView(R.id.tv_medic_time)

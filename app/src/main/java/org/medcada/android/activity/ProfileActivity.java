@@ -1,13 +1,17 @@
 package org.medcada.android.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import org.medcada.android.R;
+import org.medcada.android.db.DatabaseHandler;
 import org.medcada.android.object.ProfileDataBean;
 import org.medcada.android.tools.LabelledSpinner;
 import org.medcada.android.tools.Preferences;
@@ -71,13 +76,13 @@ public class ProfileActivity extends AppCompatActivity {
     LinearLayout conditonContainer;
     @BindView(R.id.insuranceImage)
     ImageView insuranceImage;
-    //    @BindView(R.id.otp_view)
-//    OtpView otpView;
     ProfileDataBean dataBean;
     @BindView(R.id.activity_pro_condition)
     EditText activityProCondition;
     @BindView(R.id.et_passcode)
     EditText etPasscode;
+
+    private DatabaseHandler dB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
 
-
+        dB = new DatabaseHandler(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.activity_main_toolbar);
 
         if (toolbar != null) {
@@ -136,8 +141,19 @@ public class ProfileActivity extends AppCompatActivity {
 //
 //
 //    }
+    final  int REQUEST_CODE = 101;
     @OnClick(R.id.done_fab)
     public void saveProfileData() {
+        int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.SEND_SMS},
+                    REQUEST_CODE
+            );
+            return;
+        }
         dataBean = new ProfileDataBean();
         dataBean.setBloodType(activityHelloSpinnerBlood.getSpinner().getSelectedItem().toString());
         dataBean.setCity(activityProCity.getText().toString());
@@ -167,7 +183,20 @@ public class ProfileActivity extends AppCompatActivity {
         if (compatSwitch.isChecked()) {
             if (etPasscode.getText().toString().length() > 3) {
                 dataBean.setPinEnabled(compatSwitch.isEnabled());
-                dataBean.setPinCode(etPasscode.getText().toString());
+                if (new Preferences(this).getProfiledata().getPinCode()!=null){
+                    if (!new Preferences(this).getProfiledata().getPinCode().equals(etPasscode.getText().toString())){
+                        dataBean.setPinCode(etPasscode.getText().toString());
+                        sendSMS(dB.getUser(1).getContactNumber(),"Your New Pin is : " +etPasscode.getText().toString());
+                    }else{
+                        dataBean.setPinCode(etPasscode.getText().toString());
+                    }
+
+                }else{
+                    dataBean.setPinCode(etPasscode.getText().toString());
+                    sendSMS(dB.getUser(1).getContactNumber(),"Your Pin is : " +etPasscode.getText().toString());
+                }
+
+
             } else {
                 Toast.makeText(this, "Please provide 4 digit pin", Toast.LENGTH_SHORT).show();
 //                dataBean.setPinEnabled(false);
@@ -175,7 +204,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         } else {
-           dataBean.setPinEnabled(false);
+            dataBean.setPinEnabled(false);
         }
         new Preferences(this).setProfileData(dataBean.toJson());
         Log.i("====", "saveProfileData: " + dataBean.toJson());
@@ -227,7 +256,9 @@ public class ProfileActivity extends AppCompatActivity {
         activityProState.setText(dataBean.getState());
         activityProCity.setText(dataBean.getCity());
         activityProZip.setText(dataBean.getZip());
-        etPasscode.setText(dataBean.getPinCode().toString());
+        if (dataBean.getPinCode() != null) {
+            etPasscode.setText(dataBean.getPinCode());
+        }
         if (dataBean.getMedContion() != null) {
             int childCount = dataBean.getMedContion().size();
             ArrayList<String> strConditions = dataBean.getMedContion();
@@ -257,4 +288,17 @@ public class ProfileActivity extends AppCompatActivity {
             etPasscode.setVisibility(View.GONE);
         }
     }
+    public void sendSMS(String phoneNo, String msg) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, msg, null, null);
+            Toast.makeText(getApplicationContext(), "Command Sent",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            Toast.makeText(getApplicationContext(), ex.getMessage().toString(),
+                    Toast.LENGTH_LONG).show();
+            ex.printStackTrace();
+        }
+    }
+
 }

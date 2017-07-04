@@ -99,7 +99,7 @@ public class GlucosioApplication extends Application {
                     user.getCountry(), user.getAge(), user.getGender(), user.getD_type(),
                     user.getPreferred_unit(), user.getPreferred_unit_a1c(),
                     user.getPreferred_unit_weight(), user.getPreferred_range(),
-                    user.getCustom_range_min(), user.getCustom_range_max());
+                    user.getCustom_range_min(), user.getCustom_range_max(),user.getContactNumber());
             updatedUser.setPreferred_language(null);
             //TODO: is it long operation? should we move it to separate thread?
             getDBHandler().updateUser(updatedUser);

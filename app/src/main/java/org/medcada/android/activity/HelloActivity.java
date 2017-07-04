@@ -30,15 +30,10 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
+
 import org.medcada.android.GlucosioApplication;
 import org.medcada.android.R;
 import org.medcada.android.analytics.Analytics;
@@ -47,6 +42,15 @@ import org.medcada.android.tools.LabelledSpinner;
 import org.medcada.android.tools.LocaleHelper;
 import org.medcada.android.tools.network.GlucosioExternalLinks;
 import org.medcada.android.view.HelloView;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HelloActivity extends AppCompatActivity implements HelloView {
@@ -71,6 +75,8 @@ public class HelloActivity extends AppCompatActivity implements HelloView {
 
     @BindView(R.id.activity_hello_age)
     TextView ageTextView;
+    @BindView(R.id.activity_hello_Contact)
+    EditText activityHelloContact;
 
     private HelloPresenter presenter;
 
@@ -170,15 +176,15 @@ public class HelloActivity extends AppCompatActivity implements HelloView {
                 localesWithTranslation.get(languageSpinner.getSpinner().getSelectedItemPosition()),
                 countrySpinner.getSpinner().getSelectedItem().toString(),
                 typeSpinner.getSpinner().getSelectedItemPosition() + 1,
-                unitSpinner.getSpinner().getSelectedItem().toString());
+                unitSpinner.getSpinner().getSelectedItem().toString(),activityHelloContact.getText().toString());
     }
 
     @OnClick(R.id.helloactivity_textview_terms)
     void onTermsAndConditionClick() {
         ExternalLinkActivity.launch(
-            this,
-            getString(R.string.preferences_terms),
-            GlucosioExternalLinks.TERMS);
+                this,
+                getString(R.string.preferences_terms),
+                GlucosioExternalLinks.TERMS);
     }
 
     public void displayErrorWrongAge() {

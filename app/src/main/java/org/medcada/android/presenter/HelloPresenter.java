@@ -44,9 +44,9 @@ public class HelloPresenter {
         name = "Test Account"; //TODO: add input for name in Tips;
     }
 
-    public void onNextClicked(String age, String gender, String language, String country, int type, String unit) {
+    public void onNextClicked(String age, String gender, String language, String country, int type, String unit,String contactNumber) {
         if (validateAge(age)) {
-            saveToDatabase(id, name, language, country, Integer.parseInt(age), gender, type, unit);
+            saveToDatabase(id, name, language, country, Integer.parseInt(age), gender, type, unit,contactNumber);
             helloView.startMainView();
         } else {
             helloView.displayErrorWrongAge();
@@ -66,8 +66,8 @@ public class HelloPresenter {
 
     private void saveToDatabase(final int id, final String name, final String language,
                                 final String country, final int age, final String gender,
-                                final int diabetesType, final String unitMeasurement) {
+                                final int diabetesType, final String unitMeasurement,String contactNumber) {
         dB.addUser(new User(id, name, language, country, age, gender, diabetesType, unitMeasurement,
-                "percentage", "kilograms", "ADA", 70, 180)); // We use ADA range by default
+                "percentage", "kilograms", "ADA", 70, 180,contactNumber)); // We use ADA range by default
     }
 }

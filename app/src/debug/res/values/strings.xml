@@ -20,4 +20,9 @@
 
 <resources>
     <string name="app_name">MedTracker</string>
+    <string-array name="reminder">
+        <item>1 Hour</item>
+        <item>1 Day</item>
+        <item>1 Week</item>
+    </string-array>
 </resources>

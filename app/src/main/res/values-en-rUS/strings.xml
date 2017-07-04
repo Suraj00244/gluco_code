@@ -162,8 +162,8 @@
   <string name="share_using">Share using</string>
   <string name="share_subject">Glucosio data</string>
   <string name="dialog_add_weight">Weight</string>
-  <string name="dialog_add_ketones">Ketones</string>
-  <string name="fab_ketones">Ketones</string>
+  <string name="dialog_add_ketones">Temperature</string>
+  <string name="fab_ketones">Temperature</string>
   <string name="menu_support_email">Email</string>
   <string name="activity_backup_drive_dialog_restore_button_cancel">Cancel</string>
   <string name="mmol_L">mmol/L</string>

@@ -2,6 +2,7 @@ package org.medcada.android.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.medcada.android.R;
 import org.medcada.android.activity.RemindersActivity;
 import org.medcada.android.db.Reminder;
 import org.medcada.android.tools.FormatDateTime;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -52,9 +56,12 @@ public class RemindersAdapter extends ArrayAdapter<Reminder> {
         Switch activeSwitch = (Switch) v.findViewById(R.id.activity_reminders_item_enabled);
         final Reminder reminder = items.get(position);
         final long reminderId = reminder.getId();
+        Log.i("=====", position + ": getView: " + reminder.toString());
 
         calendar.setTime(reminder.getAlarmTime());
-        timeTextView.setText(formatDateTime.getTime(calendar));
+        SimpleDateFormat newformater = new SimpleDateFormat("MMM dd - hh:mm");
+        timeTextView.setText(newformater.format(reminder.getAlarmTime())
+                /*formatDateTime.getTime(calendar)*/);
         labelTextView.setText(reminder.getLabel());
         activeSwitch.setChecked(reminder.isActive());
 

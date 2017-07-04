@@ -34,6 +34,16 @@ public class User extends RealmObject {
     private int age;
     private String gender;
     private int d_type;
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    private String contactNumber;
     private String preferred_unit;
     @Required
     private String preferred_unit_a1c;
@@ -47,7 +57,7 @@ public class User extends RealmObject {
 
     }
 
-    public User(int id, String name, String preferred_language, String country, int age, String gender, int dType, String pUnit, String a1cUnit, String weightUnit, String pRange, int minRange, int maxRange) {
+    public User(int id, String name, String preferred_language, String country, int age, String gender, int dType, String pUnit, String a1cUnit, String weightUnit, String pRange, int minRange, int maxRange,String contactNumber) {
         this.id = id;
         this.name = name;
         this.preferred_language = preferred_language;
@@ -61,6 +71,7 @@ public class User extends RealmObject {
         this.preferred_range = pRange;
         this.custom_range_max = maxRange;
         this.custom_range_min = minRange;
+        this.contactNumber = contactNumber;
     }
 
     public int getD_type() {

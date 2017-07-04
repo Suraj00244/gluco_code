@@ -1,25 +1,25 @@
 <!--
-  ~ Copyright (C) 2016 assistbud Foundation
+  ~ Copyright (C) 2016 assistBUD Foundation
   ~
-  ~ This file is part of assistbud.
+  ~ This file is part of assistBUD.
   ~
-  ~ assistbud is free software: you can redistribute it and/or modify
+  ~ assistBUD is free software: you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
   ~ the Free Software Foundation, version 3.
   ~
-  ~ assistbud is distributed in the hope that it will be useful,
+  ~ assistBUD is distributed in the hope that it will be useful,
   ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~ GNU General Public License for more details.
   ~
   ~ You should have received a copy of the GNU General Public License
-  ~ along with assistbud.  If not, see <http://www.gnu.org/licenses/>.
+  ~ along with assistBUD.  If not, see <http://www.gnu.org/licenses/>.
   ~
   ~
   -->
 
 <resources>
-    <string name="app_name">assistbud</string>
+    <string name="app_name">assistBUD</string>
     <string name="action_settings">Settings</string>
     <string name="action_feedback">Send feedback</string>
     <string name="action_invite">Invite a friend</string>
@@ -179,11 +179,11 @@
         <item>When eating out ask for sauces, gravy and salad dressings "on the side."</item>
         <item>Sugar free doesn’t really mean sugar free. It means 0.5 grams (g) of sugar per serving, so be careful to not indulge in too many sugar free items.</item>
         <item>Moving toward a healthy weight helps control blood sugars. Your doctor, a dietitian, and a fitness trainer can get you started on a plan that will work for you.</item>
-        <item>Checking your blood level and tracking it in an app like assistbud twice a day will help you be aware of outcomes from food and lifestyle choices.</item>
+        <item>Checking your blood level and tracking it in an app like assistBUD twice a day will help you be aware of outcomes from food and lifestyle choices.</item>
         <item>Get HbA1c blood tests to find out your average blood sugar for the past 2 to 3 months. Your doctor should tell you how frequently this test will be needed to be performed.</item>
         <item>Tracking how many carbohydrates you consume can be just as important as checking blood levels since carbohydrates influence blood glucose levels. Talk to your doctor or a dietician about carbohydrate intake.</item>
         <item>Controlling blood pressure, cholesterol, and triglyceride levels is important since diabetics are susceptible to heart disease.</item>
-        <item>There are several diet approaches you can take to eating healthier and helping improve your diabetes outcomes. Seek advice from a dietician on what will work best for you and your budget.</item>
+        <item>There are several diet approaches you can take to eating healthier and helping improve your diabetes outcomes. Seek advice from a dietician on what will work best for you and your BUDget.</item>
         <item>Working on getting regular exercise is especially important for those with diabetes and can help you maintain a healthy weight. Talk to your doctor about exercises that will be appropriate for you.</item>
         <item>Being sleep-deprived can make you eat more especially things like junk food and as a result can negatively impact your health. Be sure to get a good night sleep and consult a sleep specialist if you are having difficulty.</item>
         <item>Stress can have a negative impact on diabetes. Talk to your doctor or other health care professional about coping with stress.</item>
@@ -202,21 +202,21 @@
     <string name="assistant_action_reading">ADD READING</string>
     <string name="assistant_action_try">TRY IT NOW</string>
     <string name="assistant_weight_title">Update your weight</string>
-    <string name="assistant_weight_desc">Make sure to update your weight so assistbud has the most accurate information.</string>
+    <string name="assistant_weight_desc">Make sure to update your weight so assistBUD has the most accurate information.</string>
     <string name="assistant_research_title">Update your research opt-in</string>
     <string name="assistant_research_desc">You can always opt-in or opt-out of diabetes research sharing, but remember all data shared is entirely anonymous. We only share demographics and glucose level trends.</string>
     <string name="assistant_categories_title">Create categories</string>
-    <string name="assistant_categories_desc">assistbud comes with default categories for glucose input but you can create custom categories in settings to match your unique needs.</string>
+    <string name="assistant_categories_desc">assistBUD comes with default categories for glucose input but you can create custom categories in settings to match your unique needs.</string>
     <string name="assistant_check_title">Check here often</string>
-    <string name="assistant_check_desc">assistbud assistant provides regular tips and will keep improving, so always check here for useful actions you can take to improve your assistbud experience and for other useful tips.</string>
+    <string name="assistant_check_desc">assistBUD assistant provides regular tips and will keep improving, so always check here for useful actions you can take to improve your assistBUD experience and for other useful tips.</string>
     <string name="assistant_feedback_title">Submit feedback</string>
-    <string name="assistant_feedback_desc">If you find any technical issues or have feedback about assistbud we encourage you to submit it in the settings menu in order to help us improve assistbud.</string>
+    <string name="assistant_feedback_desc">If you find any technical issues or have feedback about assistBUD we encourage you to submit it in the settings menu in order to help us improve assistBUD.</string>
     <string name="assistant_reading_title">Add a reading</string>
     <string name="assistant_reading_desc">Be sure to regularly add your glucose readings so we can help you track your glucose levels over time.</string>
     <string name="assistant_export_title">Export your data</string>
     <string name="assistant_export_desc">Share your data with your doctor or backup your data to Google Drive using the export feature.</string>
     <string name="assistant_calculator_a1c_title">Calculate HbA1c</string>
-    <string name="assistant_calculator_a1c_desc">assistbud\'s built–in HbA1c calculator is now available to use in the navigation drawer. Enter your average blood glucose and save the calculated HbA1c value instantly.</string>
+    <string name="assistant_calculator_a1c_desc">assistBUD\'s built–in HbA1c calculator is now available to use in the navigation drawer. Enter your average blood glucose and save the calculated HbA1c value instantly.</string>
 
     <string-array name="assistant_titles" translatable="false">
         <item>@string/assistant_calculator_a1c_title</item>
@@ -253,10 +253,10 @@
         <item>@string/helloactivity_spinner_preferred_range_3</item>
         <item>@string/helloactivity_spinner_preferred_range_4</item>
     </string-array>
-    <string name="menu_support_error1">There isn\'t an email app installed. Please send a mail to support@assistbud.com</string>
+    <string name="menu_support_error1">There isn\'t an email app installed. Please send a mail to support@assistBUD.com</string>
     <string-array name="menu_support_options" translatable="false">
-        <item>support@assistbud.com</item>
-        <item>assistbud.com</item>
+        <item>support@assistBUD.com</item>
+        <item>assistBUD.com</item>
     </string-array>
 
     <string-array name="menu_backup_options" translatable="false">
@@ -265,23 +265,23 @@
     </string-array>
 
     <string name="invitation_title">Invite other people</string>
-    <string name="invitation_message">Try assistbud, an open source app for diabetes management and research.</string>
-    <string name="invitation_cta">Try assistbud</string>
+    <string name="invitation_message">Try assistBUD, an open source app for diabetes management and research.</string>
+    <string name="invitation_cta">Try assistBUD</string>
 
     <string name="title_activity_backup_drive">Google Drive Backup</string>
     <string name="activity_main_dialog_backup_export_title">Backup &amp; Export</string>
     <string name="preferences_privacy">Privacy</string>
-    <string name="helloactivity_textview_tos">By using assistbud, you are agreeing to the</string>
+    <string name="helloactivity_textview_tos">By using assistBUD, you are agreeing to the</string>
     <string name="preferences_backup_google_drive">Google Drive</string>
-    <string name="preferences_about_glucosio">About assistbud</string>
-    <string name="preferences_rate">Rate assistbud</string>
+    <string name="preferences_about_glucosio">About assistBUD</string>
+    <string name="preferences_rate">Rate assistBUD</string>
     <string name="preferences_licences_open">Open source licenses</string>
     <string name="preferences_contributors">Contributors</string>
     <string name="preferences_freestyle_libre">Enable FreeStyle Libre® support</string>
     <string name="preferences_freestyle_libre_experimental">EXPERIMENTAL: Enable FreeStyle Libre® support</string>
     <string name="preferences_font_dyslexia_experimental">EXPERIMENTAL: Increase readability for users with dyslexia</string>
     <string name="preferences_font_dyslexia">Increase readability for users with dyslexia</string>
-    <string name="about_donate">Donate to assistbud</string>
+    <string name="about_donate">Donate to assistBUD</string>
     <string name="reading_ok">OK</string>
     <string name="reading_hypo">Hypoglycemia</string>
     <string name="reading_low">Low</string>
@@ -320,16 +320,16 @@
 
     <!-- Future Strings Baked In Early For l10n -->
     <!-- Intro Strings -->
-    <string name="intro_title1">Welcome to assistbud!</string>
-    <string name="intro_para1">assistbud is a free and open source app for managing your diabetes</string>
+    <string name="intro_title1">Welcome to assistBUD!</string>
+    <string name="intro_para1">assistBUD is a free and open source app for managing your diabetes</string>
     <string name="intro_title2">Logging and Trends</string>
-    <string name="intro_para2">assistbud makes logging glucose levels and visualizing trends easy</string>
+    <string name="intro_para2">assistBUD makes logging glucose levels and visualizing trends easy</string>
     <string name="intro_title3">Support Diabetes Research</string>
-    <string name="intro_para3">assistbud allows you to opt-in to sharing anonymous trends with academic diabetes researchers</string>
+    <string name="intro_para3">assistBUD allows you to opt-in to sharing anonymous trends with academic diabetes researchers</string>
     <string name="intro_title4">Privacy Focused</string>
-    <string name="intro_para4">assistbud takes your privacy seriously and only shares undidenfiable trends if you opt-in</string>
+    <string name="intro_para4">assistBUD takes your privacy seriously and only shares undidenfiable trends if you opt-in</string>
     <string name="intro_title5">Improved Health Outcomes</string>
-    <string name="intro_para5">assistbud helps you track your glucose level trends and other health metrics for improved health outcomes</string>
+    <string name="intro_para5">assistBUD helps you track your glucose level trends and other health metrics for improved health outcomes</string>
 
     <!-- Future Strings Baked In Early For l10n -->
     <!-- Smart Assistant Strings -->
@@ -367,7 +367,7 @@
     <string name="dialog_addfood_fat">Fat:</string>
 
 
-    <!-- About assistbud Strings -->
+    <!-- About assistBUD Strings -->
 
     <string name="about_credits">Credits</string>
     <string name="about_contribute">Contribute</string>
@@ -384,10 +384,10 @@
     <string name="title_activity_export">Export Data</string>
     <string name="dialog_export_all">Export everything</string>
     <string name="share_using">Share using</string>
-    <string name="share_subject">assistbud data</string>
+    <string name="share_subject">assistBUD data</string>
     <string name="activity_export_snackbar_1">"Exporting"</string>
     <string name="activity_export_snackbar_2">readings</string>
-    <string name="fragment_overview_permission_storage">assistbud needs storage permission to save a screenshot</string>
+    <string name="fragment_overview_permission_storage">assistBUD needs storage permission to save a screenshot</string>
     <string name="fragment_overview_graph_export_true">Screenshot saved to gallery</string>
     <string name="fragment_overview_graph_export_false">Error saving screenshot to gallery</string>
     <string name="dialog_export_range">Export range</string>
@@ -451,8 +451,8 @@
     <string name="activity_backup_drive_automatic">Automatic backup</string>
     <string name="activity_backup_drive_desc">Backing up your data to Google Drive allows you to restore all your readings in case you lose or change devices.</string>
     <string name="activity_backup_drive_message_restart">Restarting to apply changes...</string>
-    <string name="activity_backup_drive_desc_1">Sync assistbud\'s database in the cloud with Google Drive.</string>
-    <string name="activity_backup_drive_desc_2">You\'ll be able to restore all your readings if you lost or change phone or sync assistbud\'s data between your devices.</string>
+    <string name="activity_backup_drive_desc_1">Sync assistBUD\'s database in the cloud with Google Drive.</string>
+    <string name="activity_backup_drive_desc_2">You\'ll be able to restore all your readings if you lost or change phone or sync assistBUD\'s data between your devices.</string>
     <string name="activity_backup_drive_success">Database successfully backed up to Drive</string>
     <string name="activity_backup_drive_restore_success">Successfully restored database from Drive</string>
     <string name="activity_backup_drive_failed">Something went wrong. Please try again :/</string>
@@ -469,7 +469,7 @@
     <string name="activity_backup_drive_dialog_restore_button_restore">Restore backup</string>
     <string name="activity_backup_drive_button_restore">Restore from Drive</string>
     <string name="activity_backup_drive_error_restore">Unable to find a valid backup to restore from Drive</string>
-    <string name="activity_main_error_play_services">assistbud needs Play Services to enable Google Drive backup.</string>
+    <string name="activity_main_error_play_services">assistBUD needs Play Services to enable Google Drive backup.</string>
     <string name="activity_main_dialog_csv_title">Export to CSV file</string>
 
     <string-array name="fragment_history_selector" translatable="false">
@@ -497,10 +497,10 @@
     <string name="activitiy_reminders_error_duplicate">This reminder already exists.</string>
     <string name="activity_reminder_error_empty">Please enter a valid label.</string>
     <string name="activity_reminder_add_label">Set reminder Label</string>
-    <string name="reminder_item_title_morning">Good Morning, It is time to do an entry in assistbud!</string>
-    <string name="reminder_item_title_afternoon">Good Afternoon, It is time to do an entry in assistbud!</string>
-    <string name="reminder_item_title_evening">Good Evening, It is time to do an entry in assistbud!</string>
-    <string name="reminder_item_title_generic">It is time to do an entry in assistbud!</string>
+    <string name="reminder_item_title_morning">Good Morning, It is time to do an entry in assistBUD!</string>
+    <string name="reminder_item_title_afternoon">Good Afternoon, It is time to do an entry in assistBUD!</string>
+    <string name="reminder_item_title_evening">Good Evening, It is time to do an entry in assistBUD!</string>
+    <string name="reminder_item_title_generic">It is time to do an entry in assistBUD!</string>
     <string name="reminder_item_title_generic2">Time to log your glucose level!</string>
     <string name="warning_internet_connection_required">Sorry but you need internet for this feature</string>
 

@@ -1,6 +1,7 @@
 package org.medcada.android.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.FloatingActionButton;
@@ -74,7 +75,10 @@ public class RemindersActivity extends AppCompatActivity implements TimePickerDi
                     public void onClick(DialogInterface dialog, int item) {
                         // Do something with the selection
                         label = (items[item].toString());
-                        openTimePicker();
+                        Intent intent = new Intent(RemindersActivity.this,AddReminderDetailsActivity.class);
+                        intent.putExtra("label",label);
+                        startActivity(intent);
+                       // openTimePicker();
                     }
                 });
                 // Set up the buttons
@@ -181,5 +185,11 @@ public class RemindersActivity extends AppCompatActivity implements TimePickerDi
             finish();
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRemindersList();
     }
 }

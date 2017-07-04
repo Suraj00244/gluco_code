@@ -69,7 +69,21 @@
             android:layout_marginTop="16dp"
             custom:labelText="@string/helloactivity_language"
             custom:widgetColor="@color/glucosio_pink" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
+            <EditText
+                android:id="@+id/activity_hello_Contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:digits="0123456789"
+                android:hint="Contact Number"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textSize="@dimen/abc_text_size_body_2_material" />
+        </android.support.design.widget.TextInputLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

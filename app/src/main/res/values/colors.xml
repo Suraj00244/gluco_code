@@ -50,5 +50,19 @@
     <color name="glucosio_reading_low">#4B8DDB</color>
     <color name="glucosio_reading_high">#E7B85D</color>
     <color name="glucosio_reading_hypo">#6F4EAB</color>
-
+<array name="my_colors">
+    <item>@android:color/white</item>
+    <item>#333333</item>
+    <item>#D2B48C</item>
+    <item>#FF0000</item>
+    <item>#FFC0CB</item>
+    <item>#FFDAB9</item>
+    <item>#8B4513</item>
+    <item>#FFA500</item>
+    <item>#FFFF00</item>
+    <item>#008000</item>
+    <item>#40E0D0</item>
+    <item>#1E90FF</item>
+    <item>#800080</item>
+</array>
 </resources>

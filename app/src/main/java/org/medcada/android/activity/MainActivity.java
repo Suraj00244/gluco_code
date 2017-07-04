@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setElevation(0);
-            getSupportActionBar().setTitle("assistbud");
+            getSupportActionBar().setTitle("assistBUD");
             getSupportActionBar().setLogo(R.drawable.ic_logo);
         }
 
@@ -181,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         final PrimaryDrawerItem itemA1C = new PrimaryDrawerItem().withName("Profile").withIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_person_black_24dp, null)).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itememergency = new PrimaryDrawerItem().withName("Emergency").withIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_add_alert_black_24dp, null)).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemmedications = new PrimaryDrawerItem().withName("Medications").withIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_calculator_a1c_grey_24dp, null)).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
-
         final PrimaryDrawerItem itemReminders = new PrimaryDrawerItem().withName(R.string.activity_reminders_title).withIcon(VectorDrawableCompat.create(getResources(), R.drawable.ic_alarm_grey_24dp, null)).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
 
         DrawerBuilder drawerBuilder = new DrawerBuilder()
@@ -191,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 .withActionBarDrawerToggle(true)
                 .withAccountHeader(new AccountHeaderBuilder()
                         .withActivity(this)
+
                         .withHeaderBackground(R.drawable.drawer_header)
                         .build()
                 )

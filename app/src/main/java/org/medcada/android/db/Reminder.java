@@ -13,12 +13,42 @@ public class Reminder extends RealmObject {
     private boolean oneTime;
     private boolean active;
     private String label;
+    private String doctor;
+    private String location;
+    private String note;
+
     private String metric;
+
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+
 
     public Reminder() {
     }
 
-    public Reminder(long id, Date alarmTime, String label, String metric, boolean oneTime, boolean active) {
+        public Reminder(long id, Date alarmTime, String label, String metric, boolean oneTime, boolean active) {
         this.id = id;
         this.label = label;
         this.alarmTime = alarmTime;
@@ -73,5 +103,17 @@ public class Reminder extends RealmObject {
 
     public String getLabel(){
         return label;
+    }
+
+    @Override
+    public String toString() {
+        return "Reminder{" +
+                "id=" + id +
+                ", alarmTime=" + alarmTime +
+                ", oneTime=" + oneTime +
+                ", active=" + active +
+                ", label='" + label + '\'' +
+                ", metric='" + metric + '\'' +
+                '}';
     }
 }

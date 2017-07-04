@@ -235,7 +235,7 @@
   <string name="activity_export_no_readings_snackbar">Nu sunt citiri de exportat.</string>
   <string name="wear_new_reading">Noua citire a fost adăugată</string>
   <string name="dialog_add_weight">Greutate</string>
-  <string name="dialog_add_ketones">Ketone</string>
+  <string name="dialog_add_ketones">Temperature</string>
   <string name="dialog_add_pressure_min">Tensiune minimă</string>
   <string name="dialog_add_pressure_max">Tensiune maximă</string>
   <string name="dialog_add_cholesterol_total">Total colesterol</string>
@@ -255,7 +255,7 @@
   <string name="title_activity_add_pressure">Adaugă tensiune arterială</string>
   <string name="title_activity_add_pressure_edit">Editează tensiunea arterială</string>
   <string name="fab_weight">Greutate corporală</string>
-  <string name="fab_ketones">Ketone</string>
+  <string name="fab_ketones">Temperature</string>
   <string name="fab_pressure">Tensiune arterială</string>
   <string name="fab_cholesterol">Nivelul de colesterol</string>
   <string name="fab_HB1AC">Citiri HB1AC</string>
